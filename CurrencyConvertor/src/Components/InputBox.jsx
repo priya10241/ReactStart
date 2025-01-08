@@ -2,7 +2,8 @@ import { useEffect, useId, useState } from "react";
 function InputBox(
     {currencyOptions,
         label,
-        selectedcurrency="usd"
+        selectedcurrency="usd",
+        setSelectedCurrency
     }
 ) {
     let id1 = useId();
@@ -10,7 +11,7 @@ function InputBox(
     if(currencyOptions==undefined){
         currencyOptions = ["inr","usd"];
     }
-    let [selectedCurrency,setSelectedCurrency] = useState("usd");
+    // let [selectedCurrency,setSelectedCurrency] = useState("usd");
     useEffect(()=>{
         setSelectedCurrency(selectedcurrency);
     },[selectedcurrency]);
