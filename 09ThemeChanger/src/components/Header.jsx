@@ -1,19 +1,19 @@
 import {NavLink} from 'react-router'
 import useThemeContext from '../contexts/ThemeContext'
+
 function Header(){
-    
-    const {themeMode,lightTheme,darkTheme} = useThemeContext();
+    let {themeMode,setThemeMode} = useThemeContext();
     const changeTheme = ()=>{
         if(themeMode=='light'){
-            darkTheme();
+            setThemeMode('dark');
         }
         else{
-            lightTheme();
+            setThemeMode('light');
         }
     }
     return(
         <>
-        <div className='flex flex-row justify-center gap-x-8 bg-slate-200 text-slate-850 pt-2 pb-2 rounded text-2xl font-bold pt-5'>
+        <div className='flex flex-row justify-center gap-x-8 bg-slate-200 text-slate-850 pt-2 pb-2 rounded text-2xl font-bold pt-5 '>
             <NavLink to='/' className={({isActive})=>
                `hover:text-red-700 ${isActive?"text-red-700":"text-slate-850"}`
             }  >Home</NavLink>

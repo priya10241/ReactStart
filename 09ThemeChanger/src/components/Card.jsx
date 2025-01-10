@@ -2,7 +2,7 @@ function Card(){
     return(
         <>
         <center>
-            <div className="bg-slate-200 h-screen w-creen">
+            <div className="bg-slate-200 h-screen w-creen dark:bg-gray-800">
                 <div className="align-middle font-bold text-slate-800 bg-slate-300 inline-block w-1/2 pt-5 pb-5 rounded text-1xl mt-20 pl-2 pr-2">
                     <h1 className="text-teal-600" >Welcome User</h1>
                     <div className="flex flex-row gap-x-2 rounded">
