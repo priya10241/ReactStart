@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import  {removeTodo, toggleComplete, updateTodo } from "../features/slice/todoSlice";
 import { useDispatch } from "react-redux";
 function TodoList(todo){
@@ -27,6 +27,10 @@ function TodoList(todo){
         dispatch(updateTodo({newtd:{...todo,tittle:todoMsg}}))
         
     }
+
+    useEffect(()=>{
+        settodoMsg(todo.tittle);
+    },[todo.tittle])
     return(
         <>
         <center>

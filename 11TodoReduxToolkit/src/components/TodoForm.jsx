@@ -6,8 +6,10 @@ const TodoForm = ()=>{
     const [input,setInput] = useState('');
     const dispatch = useDispatch();
     const addNewTodo = ()=>{
-        dispatch(addTodo(input));
-        setInput('');
+        if(input!=""){
+            dispatch(addTodo(input));
+            setInput('');
+        }
     }
 
     return( 
