@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useTodoContext } from "../contexts/TodoContext"
+import { useEffect } from "react";
 
 
 function TodoItem(todo){
@@ -20,10 +21,13 @@ function TodoItem(todo){
             setIsEditing(false);
             const el = document.getElementById(todo.id);
             el.setAttribute('readOnly',true);
-            UpdateTodo(todo.id, todoMsg);
-            console.log(Todos)
+            UpdateTodo(todo.id, {...todo,tittle:todoMsg});
         }
     }
+    console.log(todo.tittle + " "  + todoMsg)
+    useEffect(()=>{
+        settodoMsg(todo.tittle);
+    },[todo.tittle])
     return(
         <>
             <center>
@@ -34,10 +38,9 @@ function TodoItem(todo){
                  <div className="block bg-[#66785F] rounded-r-lg flex flex row justify-end gap-x-3 p-2 ">
                      <div><button type="button" className="text-slate-100 border border-slate-300 rounded" onClick={EditTodo}>{isEditing?"✏️":"📁"}</button></div>
                      <div><button type="button" className="text-slate-100" onClick={changeCompleted}>✅</button></div>
-                     {/* <div><button type="button" className="text-slate-100" onClick={()=>{
+                     <div><button type="button" className="text-slate-100" onClick={()=>{
                         RemoveTodo(todo.id);
-                        console.log(Todos);
-                    }}>❌</button></div> */}
+                    }}>❌</button></div>
                  </div>
              </div>
              </center>

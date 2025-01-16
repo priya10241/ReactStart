@@ -13,7 +13,7 @@ function App() {
     setTodos((prev)=>[...prev,{id:d,tittle:todo,complete:false}]);
   }
   const UpdateTodo = (id,newtodo)=>{
-    setTodos((prev)=> prev.map((td)=> td.id===id?{...td,tittle:newtodo}:td));
+    setTodos((prev)=> prev.map((td)=> td.id===id?newtodo:td));
   }
   const RemoveTodo = (id)=>{
     setTodos((prev)=> prev.filter((td)=>td.id!==id))
@@ -23,17 +23,17 @@ function App() {
     setTodos((prev)=> prev.map((td)=> td.id===id?{...td,complete:!td.complete}:td));
   }
 
-  useEffect(() => {
-    const todos = JSON.parse(localStorage.getItem("todos"))
+  // useEffect(() => {
+  //   const todos = JSON.parse(localStorage.getItem("todos"))
 
-    if (todos && todos.length > 0) {
-      setTodos(todos)
-    }
-  }, [])
+  //   if (todos && todos.length > 0) {
+  //     setTodos(todos)
+  //   }
+  // }, [])
 
-  useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(Todos))
-  }, [Todos])
+  // useEffect(() => {
+  //   localStorage.setItem("todos", JSON.stringify(Todos))
+  // }, [Todos])
  
   return (
 
