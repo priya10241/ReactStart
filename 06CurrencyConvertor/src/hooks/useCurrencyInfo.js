@@ -12,6 +12,7 @@ function useCurrencyInfo(currency="inr"){
             })
         })
     },[currency]);
+    // console.log(data[currency]);
     return data[currency];
 } 
  
