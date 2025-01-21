@@ -4,7 +4,7 @@ import conf from '../conf/conf.js'
 class AuthService{
     client = new Client();
     account;
-    AuthService(){
+    constructor(){
         this.client
             .setEndpoint(conf.appwriteUrl)
             .setProject(conf.appwriteProjectId);
