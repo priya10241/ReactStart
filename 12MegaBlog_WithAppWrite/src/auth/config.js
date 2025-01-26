@@ -52,7 +52,7 @@ class Service {
         }
     }
 
-    async deletePost(){
+    async deletePost(slug){
         try {
             await this.database.deleteDocument(conf.appwriteDatabaseId,
                 conf.appwriteCollectionId,
