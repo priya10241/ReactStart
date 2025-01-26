@@ -24,8 +24,8 @@ function App() {
 
   return (
     <>
-      <Header/>
-      <h1>Blog App with App Write</h1>
+      {/* <Header/>
+      <h1>Blog App with App Write</h1> */}
       <Footer/>
     </>
   )
