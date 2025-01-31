@@ -5,6 +5,7 @@ import { login } from './store/AuthSlice';
 import  authService  from './auth/auth_service';
 import Header from './components/header/Header'
 import Footer from './components/footer/Footer'
+import { Outlet } from 'react-router-dom';
 function App() {
   const [isLoading,setIsLoading] = useState(true);
   const dispatch = useDispatch();
@@ -20,15 +21,17 @@ function App() {
     .finally(()=>{
       setIsLoading(false);
     })
-  },[isLoading])
+  },[isLoading]);
 
-  return (
+  return isLoading ? (
     <>
-      {/* <Header/>
-      <h1>Blog App with App Write</h1> */}
+      <Header/>
+      <main>
+      <Outlet/>
+      </main>
       <Footer/>
     </>
-  )
+  ) : null
 }
 
 export default App

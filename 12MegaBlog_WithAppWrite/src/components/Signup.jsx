@@ -47,26 +47,26 @@ function Signup(){
             </div>
             <form onSubmit={handleSubmit(create)} className="mt-8">
                 <Input type="text" className="p-2 rounded m-2 bg-gray-100 text-slate-800" label="Name: " placeholder="Enter your name"
-                 {...register("name"),
+                 {...register("name",
                     {
                         required: true
-                    }
+                    })
                  }/>
                  <Input type="email" className="p-2 rounded m-2 bg-gray-100 text-slate-800" label="Email: " placeholder="Enter email"
-                 {...register("email"),
+                 {...register("email",
                     {
                         required: true,
                         validate: {
                             matchPatern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
                             "Email address must be a valid address",
                         }
-                    }
+                    })
                  }/>
                 <Input type="password" className="rounded m-2 bg-gray-100 text-slate-800" label="Password: " placeholder="Enter password"
-                 {...register("password"),
+                 {...register("password",
                     {
                         required: true
-                    }
+                    })
                  }/>
                  <Button type="submit" className="bg-blue-400 text-white rounded p-2">Create Account</Button>
             </form>
