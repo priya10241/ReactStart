@@ -1,6 +1,5 @@
 import React,{useState, useEffect} from "react";
-import {Container} from "../components/container/Container"
-import {PostCard} from "../components/PostCard"
+import {Container,PostCard} from "../components"
 import { useNavigate, useParams } from "react-router-dom";
 import appWriteService from "../auth/config"
 import { Query } from "appwrite";

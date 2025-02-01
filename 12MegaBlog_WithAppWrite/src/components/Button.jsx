@@ -4,12 +4,12 @@ function Button(
     type = "button",
     bgColor = "bg-gray-700",
     textColor = "text-white",
-    className = '',
     ...props
 ){
+    console.log("Button: " , children);
     return (
         <>
-        <button className={`p-2 rounded-lg ${bgColor} ${textColor} ${className}`} {...props} >{children}</button>
+        <button type={children.type || type} className={`p-2 rounded-lg ${bgColor} ${textColor} ${children.className}`} {...props} >{children.children}</button>
         </>
     )
 }

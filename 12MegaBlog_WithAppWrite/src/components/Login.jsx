@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import {useDispatch} from "react-redux"
 import {Link, useNavigate} from "react-router-dom"
 import {login as authLogin} from "../store/AuthSlice"
-import Button from "../components/Button"
-import Input from "../components/Input"
-import Logo from "../components/Logo"
+import {Button , Logo, Input} from "./"
 import {useForm} from "react-hook-form"
 import authService from "../auth/auth_service";
 function Login(){
@@ -63,7 +61,7 @@ function Login(){
                         {
                             required: true,
                         })}/>
-                    <Button type="submit" className="rounded-lg p-2 text-white bg-gray-700" children="Login"/>
+                    <Button type="submit" className="rounded-lg p-2 text-white bg-gray-700" children="Login"></Button>
                 </div>
             </form>
 

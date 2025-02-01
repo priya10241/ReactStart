@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import appWriteService from "../auth/config"
-import Container from "../components/container/Container"
+import {Container} from "../components"
 import { useNavigate, useParams } from "react-router-dom";
 import {useSelector} from "react-redux"
 export default function Post(){
