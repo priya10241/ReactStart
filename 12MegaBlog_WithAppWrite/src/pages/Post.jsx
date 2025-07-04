@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import appWriteService from "../auth/config"
-import {Container} from "../components"
-import { useNavigate, useParams } from "react-router-dom";
+import appWriteService from "../appwrite/config"
+import {Container, Button} from "../components"
+import {Link, useNavigate, useParams } from "react-router-dom";
 import {useSelector} from "react-redux"
 export default function Post(){
     const [post,setPost] = useState(null);
@@ -29,7 +29,7 @@ export default function Post(){
     const isAuthor = post && userData ? post.userId === userData.$id : false;
 
     const deletePost = ()=>{
-        appWriteService.deletePost(slug).then((status)=>{
+        appWriteService.deletePost(post.$id).then((status)=>{
             if(status){
                 appWriteService.deleteFile(post.featuredImage);
                 navigate("/")
@@ -42,7 +42,7 @@ export default function Post(){
             <Container>
                 <div className="w-full flex justify-center mb-4 relative border rounded-xl p-2">
                     <img
-                        src={appwriteService.getFilePreview(post.featuredImage)}
+                        src={appWriteService.filePreview(post.featuredImage)}
                         alt={post.title}
                         className="rounded-xl"
                     />

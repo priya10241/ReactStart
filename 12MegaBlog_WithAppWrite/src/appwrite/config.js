@@ -1,7 +1,7 @@
 import conf from '../conf/conf'
 import {Client, Databases,Storage, ID, Query} from "appwrite"
 
-class Service {
+export class Service {
     client = new Client();
     database;
     bucket;
@@ -72,7 +72,7 @@ class Service {
                 conf.appwriteCollectionId,
                 slug
             )
-        } catch (error) {
+        } catch (error) { 
             console.log("Database Service :: getPost :: ",error);
         }
     }

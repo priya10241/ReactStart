@@ -1,7 +1,7 @@
 import React,{useState, useEffect} from "react";
 import {Container,PostCard} from "../components"
 import { useNavigate, useParams } from "react-router-dom";
-import appWriteService from "../auth/config"
+import appWriteService from "../appwrite/config"
 import { Query } from "appwrite";
 
 export default function EditPost(){

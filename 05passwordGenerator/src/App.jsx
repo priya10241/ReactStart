@@ -37,7 +37,7 @@ const passwordReference = useRef(null);
 const copyToClipboard = useCallback(()=>{
   window.navigator.clipboard.writeText(password);
   passwordReference.current?.select();
-},[password])
+},[password]);
   
   return (
     <>

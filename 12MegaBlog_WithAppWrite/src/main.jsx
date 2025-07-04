@@ -1,5 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import ReactDOM from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 import { Provider } from 'react-redux'
@@ -20,37 +21,38 @@ const router = createBrowserRouter([
     children: [
       {
         path : "/",
-        element : < AuthLayout authorisation = {false}>
-                    <Home/>
-                  </AuthLayout>
+        element : <Home/>
       },
       {
         path : "/login",
-        element : < AuthLayout authorisation = {false}>
+        element : < AuthLayout authentication = {false}>
           <Login/>
         </AuthLayout>
       },
       {
         path : "/signup",
-        element : < AuthLayout authorisation = {false}>
+        element : < AuthLayout authentication = {false}>
           <Signup/>
         </AuthLayout>
       },
       {
         path : "/all-posts",
-        element : < AuthLayout authorisation>
+        element : < AuthLayout authentication>
+           {" "}
           <AllPosts/>
         </AuthLayout>
       },
       {
         path : "/add-post",
-        element : < AuthLayout authorisation>
+        element : < AuthLayout authentication>
+           {" "}
           <AddPost/>
         </AuthLayout>
       },
       {
         path : "/edit-post/:slug",
-        element : < AuthLayout authorisation >
+        element : < AuthLayout authentication >
+           {" "}
           <EditPost/>
         </AuthLayout>
       },

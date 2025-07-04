@@ -1,6 +1,5 @@
 import {Client, Account,ID} from "appwrite";
 import conf from '../conf/conf.js'
-
 class AuthService{
     client = new Client();
     account;
@@ -18,7 +17,7 @@ class AuthService{
                 return this.login(email,password);
             }
             else{
-                return null;
+                return userAccount;
             }
         }
         catch(error){
@@ -40,9 +39,9 @@ class AuthService{
             return await this.account.get();
         }
         catch(error){
-            console.log(error);
+            console.log("Error in Auth_Service Get User : " , error);
+            return null;
         }
-        return null;
     }
 ''
     async logout(){

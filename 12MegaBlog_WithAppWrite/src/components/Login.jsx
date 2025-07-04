@@ -4,20 +4,20 @@ import {Link, useNavigate} from "react-router-dom"
 import {login as authLogin} from "../store/AuthSlice"
 import {Button , Logo, Input} from "./"
 import {useForm} from "react-hook-form"
-import authService from "../auth/auth_service";
+import authService from "../appwrite/auth";
 function Login(){
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const {register, handleSubmit} = useForm();
-    const [error,setError] = useState(null);
+    const [error,setError] = useState("");
 
     const login = async(data)=>{
         setError("");
         try{
             const session = await authService.login(data);
-            const userData = await authService.getCurrentUser();
             if(session){
-                dispatch(authLogin(userData));
+                const userData = await authService.getCurrentUser();
+                if(userData) dispatch(authLogin(userData));
                 navigate("/");
             }
         }

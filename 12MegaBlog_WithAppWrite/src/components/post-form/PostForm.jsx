@@ -5,7 +5,7 @@ import Input from "../Input"
 import Button from "../Button"
 import RTE from "../RTE"
 import {useSelector} from "react-redux"
-import appWriteService from "../../auth/config"
+import appWriteService from "../../appwrite/config"
 export default function PostForm({post}){
     const {register, handleSubmit, watch , setValue, control, getValues} = useForm({
         defaultValues: {
