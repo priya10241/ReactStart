@@ -30,7 +30,7 @@ function App() {
 
   useEffect(()=>{
     cachedFun();
-  },[length,numberAllowed,charAllowed,cachedFun])
+  },[length,numberAllowed,charAllowed])
 
 const passwordReference = useRef(null);
 
