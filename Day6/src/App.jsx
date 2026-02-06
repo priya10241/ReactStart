@@ -28,6 +28,9 @@ function App() {
         for(let i=1;i<newSnakeInd.length;i++){
           newSnakeInd[i] = snakeIndices[i-1];
         }
+        if(newSnakeInd.includes(newSnakeInd[0] + headdir)){
+          setIsGameOver(true);
+        }
         newSnakeInd[0] = newSnakeInd[0] + headdir;
         if(newSnakeInd[0] == foodIndices){
           newSnakeInd.push(lastVal);
@@ -38,7 +41,7 @@ function App() {
         if(headId<0 || headId>=1600 || (boundaryIdRight.includes(headId) && headdir==-1) || (boundaryIdLeft.includes(headId) && headdir==1)){
           setIsGameOver(true);
         }
-      },1000);
+      },Math.max(100,700 - (snakeIndices.length * 30)));
     return ()=>clearInterval(intervalId);
     }
   })
